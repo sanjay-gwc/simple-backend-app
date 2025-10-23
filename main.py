@@ -1,10 +1,11 @@
-from flask import Flask, jsonify
+from flask import Flask
 
 app = Flask(__name__)
 
-@app.route("/hello")
+# Root URL returns plain text
+@app.route("/")
 def hello():
-    return jsonify({"message": "Hello from Cloud Run!"})
+    return "Hello from Cloud Run!"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
